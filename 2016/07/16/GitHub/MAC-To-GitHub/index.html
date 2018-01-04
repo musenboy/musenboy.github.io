@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GitHub,MAC," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="GitHub是什么?  GitHub是基于git实现的代码托管，git可能是目前最先进的版本控制系统。 GitHub非常强大，它允许用户跟踪其他用户，组织，软件库的动态，对软件代码的改动和bug提出评论等。 GitHub上有全世界大牛的开源代码，可以相互交流，开阔眼界，提升编码水平。 GitHub免费代码托管，只有私人仓库才需要收费，不用担心代码丢失，自己管理，保存可靠。">
+<meta name="keywords" content="GitHub,MAC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MAC本地配置连接到GitHub">
+<meta property="og:url" content="http://musenboy.com/2016/07/16/GitHub/MAC-To-GitHub/index.html">
+<meta property="og:site_name" content="musenboy">
+<meta property="og:description" content="GitHub是什么?  GitHub是基于git实现的代码托管，git可能是目前最先进的版本控制系统。 GitHub非常强大，它允许用户跟踪其他用户，组织，软件库的动态，对软件代码的改动和bug提出评论等。 GitHub上有全世界大牛的开源代码，可以相互交流，开阔眼界，提升编码水平。 GitHub免费代码托管，只有私人仓库才需要收费，不用担心代码丢失，自己管理，保存可靠。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-07-16T12:32:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MAC本地配置连接到GitHub">
+<meta name="twitter:description" content="GitHub是什么?  GitHub是基于git实现的代码托管，git可能是目前最先进的版本控制系统。 GitHub非常强大，它允许用户跟踪其他用户，组织，软件库的动态，对软件代码的改动和bug提出评论等。 GitHub上有全世界大牛的开源代码，可以相互交流，开阔眼界，提升编码水平。 GitHub免费代码托管，只有私人仓库才需要收费，不用担心代码丢失，自己管理，保存可靠。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://musenboy.com/2016/07/16/GitHub/MAC-To-GitHub/"/>
+
+
+
+
+
+  <title>MAC本地配置连接到GitHub | musenboy</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">musenboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://musenboy.com/2016/07/16/GitHub/MAC-To-GitHub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="musenboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://otyn4yxff.bkt.clouddn.com/18-1-4/33809860.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="musenboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MAC本地配置连接到GitHub</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-16T20:32:43+08:00">
+                2016-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="GitHub是什么"><a href="#GitHub是什么" class="headerlink" title="GitHub是什么?"></a>GitHub是什么?</h1><blockquote>
+<ul>
+<li>GitHub是基于git实现的代码托管，git可能是目前最先进的版本控制系统。</li>
+<li>GitHub非常强大，它允许用户跟踪其他用户，组织，软件库的动态，对软件代码的改动和bug提出评论等。</li>
+<li>GitHub上有全世界大牛的开源代码，可以相互交流，开阔眼界，提升编码水平。</li>
+<li>GitHub免费代码托管，只有私人仓库才需要收费，不用担心代码丢失，自己管理，保存可靠。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>MAC安装node有两种方法<br>(1) 从<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node官网</a>下载，一步一步安装即可。<br>(2) 安装MAC软件包管理工具<a href="http://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>，打开终端复制下面命令回车。直到Installaction Successful！就证明安装HomeBrew成功。<br>可以查看HomeBrew<a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md#installation" target="_blank" rel="noopener">帮助文档</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p>
+<p>通过下面命令安装node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>MAC中一般都默认安装了git，如果没有也可以通过以下两种方法安装。</p>
+<blockquote>
+<p>1.从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，需要运行Xcode，选择菜单Xcode-&gt;Preferences，在弹出窗口中找到Downloads，选择Command Line Tools，点Install就可以完成安装了。<br>2.通过<a href="http://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>安装，在终端输入下面命令。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure>
+<h1 id="GitHub注册与配置"><a href="#GitHub注册与配置" class="headerlink" title="GitHub注册与配置"></a>GitHub注册与配置</h1><h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p>访问<a href="https://github.com/musenboy" target="_blank" rel="noopener">GitHub</a>，注册帐号和填入邮箱，邮箱非常重要，要记住，github上很多重要的信息都是通过邮箱发送。</p>
+<h2 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH KEY"></a>配置SSH KEY</h2><p>通过SSH KEY和GitHub建立连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 首先我们需要检查你电脑上现有的ssh key：</span><br><span class="line"># 检查本机的ssh密钥</span><br><span class="line"></span><br><span class="line">$ cd ~/. ssh </span><br><span class="line"></span><br><span class="line">#如果提示：No such file or directory 说明你是第一次使用git。</span><br><span class="line"></span><br><span class="line">#生成新的SSH Key：</span><br><span class="line"></span><br><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+<p>上面回车后，会要求输入密码，提交代码的时候为了防止别人往你的项目提交内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): #输入加密串</span><br><span class="line">Enter same passphrase again: #再次输入加密串</span><br></pre></td></tr></table></figure>
+<p>最后看到这样，就成功生成ssh key：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /Users/sam/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /Users/sam/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:OeucARcRgiCCJkw5EEjmSeQoQjFCwew7//5zBbZWsdZQ 邮件地址@youremail.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|^%+. .. o.       |</span><br><span class="line">|#*o .  . .      .|</span><br><span class="line">|*=.     .      E |</span><br><span class="line">|+        o  . o  |</span><br><span class="line">|.     . S    = . |</span><br><span class="line">| o     o.o. + .  |</span><br><span class="line">|  o     oo +     |</span><br><span class="line">|   .   o.o+      |</span><br><span class="line">|    ....=+       |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加SSH-Key到GitHub"><a href="#添加SSH-Key到GitHub" class="headerlink" title="添加SSH Key到GitHub"></a>添加SSH Key到GitHub</h2><pre><code>在本机设置SSHKey之后，需要添加到GitHub上，以完成SSH链接的设置。
+</code></pre><p>打开本地id_rsa.pub文件。此文件里面内容为刚才生成密钥。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#进入id_rsa.pub所在目录</span><br><span class="line"></span><br><span class="line">$ cd /Users/your_user_directory/.ssh</span><br><span class="line"></span><br><span class="line">#查看文件</span><br><span class="line"></span><br><span class="line">$ tail id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>准确的复制这个文件的内容，才能保证设置的成功。登陆github系统。点击右上角的 Settings-&gt;Personal settings—&gt;SSH keys —&gt; New SSH Key 把你本地生成的密钥复制到里面（key文本框中），点击Add SSH key就可以添加完成。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#输入下面的命令，git@github.com的部分不要修改</span><br><span class="line"></span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br><span class="line"></span><br><span class="line">#输入yes</span><br><span class="line"></span><br><span class="line">Hi cnfeat! You&apos;ve successfully authenticated, </span><br><span class="line">but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>另外，如果设置ssh key成功，你的邮箱会收到设置成功的消息，关注一下邮箱。</p>
+<h2 id="设置帐号信息"><a href="#设置帐号信息" class="headerlink" title="设置帐号信息"></a>设置帐号信息</h2><p>到这一步，已经可以通过ssh连接到github了，github会根据名称和邮箱进行权限判断。<br>在终端中输入以下命令即可完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;your user name&quot;</span><br><span class="line">$ git config --global user.email &quot;your email@youremail.com&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          
+            <a href="/tags/MAC/" rel="tag"># MAC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/16/GitHub/deletefork/" rel="next" title="删除fork别人的项目">
+                <i class="fa fa-chevron-left"></i> 删除fork别人的项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://otyn4yxff.bkt.clouddn.com/18-1-4/33809860.jpg"
+               alt="musenboy" />
+          <p class="site-author-name" itemprop="name">musenboy</p>
+           
+              <p class="site-description motion-element" itemprop="description">千里之行，始于足下</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/musenboy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub是什么"><span class="nav-number">1.</span> <span class="nav-text">GitHub是什么?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node"><span class="nav-number">2.1.</span> <span class="nav-text">安装node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">2.2.</span> <span class="nav-text">安装git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub注册与配置"><span class="nav-number">3.</span> <span class="nav-text">GitHub注册与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册"><span class="nav-number">3.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SSH-KEY"><span class="nav-number">3.2.</span> <span class="nav-text">配置SSH KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加SSH-Key到GitHub"><span class="nav-number">3.3.</span> <span class="nav-text">添加SSH Key到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">3.4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置帐号信息"><span class="nav-number">3.5.</span> <span class="nav-text">设置帐号信息</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">musenboy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
