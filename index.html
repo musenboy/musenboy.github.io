@@ -263,6 +263,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://musenboy.com/2018/01/17/sku/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="musenboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://otyn4yxff.bkt.clouddn.com/18-1-4/33809860.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="musenboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/17/sku/" itemprop="url">SKU</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T13:24:02+08:00">
+                2018-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这是一篇关于商品库存的文章，曾经做过一年的移动商城，涉及到商品管理、库存管理、下单、商品详情页面以及支付等。最有感触的是商品管理的规格处理，大部分时间都花在关于规格SKU表及页面设计。由于当时还没有电商方面的经验，经过了一年沉淀，现把商品表、属性表（规格表）、属性商品关系表、属性sku关系表以及sku表大体设计思路写出来，希望能帮到有需要的人。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE <span class="string">`items`</span> (</span><br><span class="line"><span class="string">`item_id`</span> int(<span class="number">11</span>) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line"><span class="string">`item_name`</span> varchar(<span class="number">255</span>) NOT NULL COMMENT <span class="string">'类型表id'</span>,</span><br><span class="line">PRIMARY KEY (<span class="string">`item_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'商品表'</span></span><br><span class="line"></span><br><span class="line">CREATE TABLE <span class="string">`attr`</span> (</span><br><span class="line"><span class="string">`attr_id`</span> int(<span class="number">11</span>) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line"><span class="string">`attr_name`</span> varchar(<span class="number">255</span>) NOT NULL COMMENT <span class="string">'属性名称'</span>,</span><br><span class="line">PRIMARY KEY (<span class="string">`attr_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'属性表'</span></span><br><span class="line"></span><br><span class="line">CREATE TABLE <span class="string">`attr_val`</span> (</span><br><span class="line"><span class="string">`val_id`</span> int(<span class="number">11</span>) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line"><span class="string">`val_name`</span> varchar(<span class="number">255</span>) NOT NULL COMMENT <span class="string">'属性值名称'</span>,</span><br><span class="line">PRIMARY KEY (<span class="string">`val_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'属性值表'</span></span><br><span class="line"></span><br><span class="line">CREATE TABLE <span class="string">`attr_item_rel`</span> (</span><br><span class="line"><span class="string">`attr_id`</span> int(<span class="number">11</span>) unsigned NOT NULL comment <span class="string">'属性id'</span>,</span><br><span class="line"><span class="string">`item_id`</span> int(<span class="number">11</span>) UNSIGNED not NULL comment <span class="string">'商品id'</span>,</span><br><span class="line"><span class="string">`attr_name`</span> varchar(<span class="number">255</span>) NOT NULL COMMENT <span class="string">'属性名称'</span>,</span><br><span class="line">KEY <span class="string">`attr_id_idx`</span> (<span class="string">`attr_id`</span>),</span><br><span class="line">KEY <span class="string">`item_id_idx`</span> (<span class="string">`item_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'属性和商品关系表'</span></span><br><span class="line"></span><br><span class="line">CREATE TABLE <span class="string">`attr_val_rel`</span> (</span><br><span class="line"><span class="string">`val_id`</span>  int(<span class="number">11</span>) UNSIGNED not NULL comment <span class="string">'属性值id'</span>,</span><br><span class="line"><span class="string">`attr_id`</span> int(<span class="number">11</span>) unsigned NOT NULL comment <span class="string">'属性id'</span>,</span><br><span class="line"><span class="string">`val_name`</span> varchar(<span class="number">255</span>) NOT NULL COMMENT <span class="string">'属性值名称'</span>,</span><br><span class="line">KEY <span class="string">`attr_id_idx`</span> (<span class="string">`attr_id`</span>),</span><br><span class="line">KEY <span class="string">`val_id_idx`</span> (<span class="string">`val_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'属性值和属性关系表'</span></span><br><span class="line"></span><br><span class="line">CREATE TABLE <span class="string">`sku`</span> (</span><br><span class="line"><span class="string">`sku_id`</span>  int(<span class="number">11</span>) UNSIGNED not NULL AUTO_INCREMENT,</span><br><span class="line"><span class="string">`item_id`</span> int(<span class="number">11</span>) UNSIGNED NOT NULL comment <span class="string">'商品id'</span>,</span><br><span class="line"><span class="string">`attr_path`</span> VARCHAR(<span class="number">255</span>) NOT NULL comment <span class="string">'属性值路径'</span>,</span><br><span class="line"><span class="string">`price`</span> DECIMAL NOT NULL comment <span class="string">'价格'</span>,</span><br><span class="line"><span class="string">`stock`</span> int(<span class="number">11</span>) UNSIGNED NULL COMMENT <span class="string">'库存'</span>,</span><br><span class="line">PRIMARY KEY (<span class="string">`sku_id`</span>),</span><br><span class="line">KEY <span class="string">`item_id_idx`</span> (<span class="string">`item_id`</span>)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=<span class="string">'sku表'</span></span><br></pre></td></tr></table></figure>
+<p>实际上不止那么少字段，这里只是列出了一部分。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/17/sku/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://musenboy.com/2016/07/16/GitHub/MAC-To-GitHub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -930,7 +1056,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -943,7 +1069,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
