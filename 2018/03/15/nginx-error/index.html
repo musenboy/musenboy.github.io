@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="千里之行，始于足下">
-<meta property="og:type" content="website">
-<meta property="og:title" content="musenboy">
-<meta property="og:url" content="http://musenboy.com/archives/2018/index.html">
+<meta name="description" content="情景：发现其他同事打开我本机页面，某些返回数据量大的接口，在Chrome浏览器中会报net::ERR_INCOMPLETE_CHUNKED_ENCODING的错误。 开发环境：tomcat7.0.75nginxjdk1.7 定位问题：当直接请求接口时，有些数据被截掉了。当没通过nginx转发时，接口返回数据正常。由次可知问题发生在nginx。 查看nginx的错误日志：open() “/usr/l">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="net::ERR_INCOMPLETE_CHUNKED_ENCODING">
+<meta property="og:url" content="http://musenboy.com/2018/03/15/nginx-error/index.html">
 <meta property="og:site_name" content="musenboy">
-<meta property="og:description" content="千里之行，始于足下">
+<meta property="og:description" content="情景：发现其他同事打开我本机页面，某些返回数据量大的接口，在Chrome浏览器中会报net::ERR_INCOMPLETE_CHUNKED_ENCODING的错误。 开发环境：tomcat7.0.75nginxjdk1.7 定位问题：当直接请求接口时，有些数据被截掉了。当没通过nginx转发时，接口返回数据正常。由次可知问题发生在nginx。 查看nginx的错误日志：open() “/usr/l">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-15T06:37:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="musenboy">
-<meta name="twitter:description" content="千里之行，始于足下">
+<meta name="twitter:title" content="net::ERR_INCOMPLETE_CHUNKED_ENCODING">
+<meta name="twitter:description" content="情景：发现其他同事打开我本机页面，某些返回数据量大的接口，在Chrome浏览器中会报net::ERR_INCOMPLETE_CHUNKED_ENCODING的错误。 开发环境：tomcat7.0.75nginxjdk1.7 定位问题：当直接请求接口时，有些数据被截掉了。当没通过nginx转发时，接口返回数据正常。由次可知问题发生在nginx。 查看nginx的错误日志：open() “/usr/l">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://musenboy.com/archives/2018/"/>
+  <link rel="canonical" href="http://musenboy.com/2018/03/15/nginx-error/"/>
 
 
 
 
 
-  <title>归档 | musenboy</title>
+  <title>net::ERR_INCOMPLETE_CHUNKED_ENCODING | musenboy</title>
   
 
 
@@ -163,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,111 +249,162 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://musenboy.com/2018/03/15/nginx-error/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="musenboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://otyn4yxff.bkt.clouddn.com/18-1-4/33809860.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="musenboy">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/15/nginx-error/" itemprop="url">
-              
-                <span itemprop="name">net::ERR_INCOMPLETE_CHUNKED_ENCODING</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">net::ERR_INCOMPLETE_CHUNKED_ENCODING</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-15T00:00:00+08:00"
-              content="2018-03-15" >
-          03-15
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T00:00:00+08:00">
+                2018-03-15
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/17/sku/" itemprop="url">
-              
-                <span itemprop="name">SKU</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-17T13:24:02+08:00"
-              content="2018-01-17" >
-          01-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>情景：发现其他同事打开我本机页面，某些返回数据量大的接口，在Chrome浏览器中会报net::ERR_INCOMPLETE_CHUNKED_ENCODING的错误。</p>
+<p>开发环境：<br>tomcat7.0.75<br>nginx<br>jdk1.7</p>
+<p>定位问题：当直接请求接口时，有些数据被截掉了。当没通过nginx转发时，接口返回数据正常。由次可知问题发生在nginx。</p>
+<p>查看nginx的错误日志：open() “/usr/local/var/run/nginx/proxy_temp/0/03/0000000030” failed (13: Permission denied) while reading upstream。</p>
+<p>分析：当代理文件大小超过配置的proxy_temp_file_write_size值时，nginx会将文件写入到临时目录下（默认为/proxy_temp）。如果nginx对proxy_temp没有访问的权限，就会报Permission denied的错误。</p>
+<p>解决：<br>打开nginx.conf</p>
+<blockquote>
+<p>添加user www www;</p>
+<p>chown -R www:www /usr/local/var/run/nginx/proxy_temp</p>
+</blockquote>
+<p>给这个用户授权。<br>重启nginx：</p>
+<blockquote>
+<p>nginx -t</p>
+<p>nginx -s reload</p>
+</blockquote>
+<p></p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/17/sku/" rel="next" title="SKU">
+                <i class="fa fa-chevron-left"></i> SKU
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -359,6 +412,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -559,11 +616,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   

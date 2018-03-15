@@ -263,6 +263,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://musenboy.com/2018/03/15/nginx-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="musenboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://otyn4yxff.bkt.clouddn.com/18-1-4/33809860.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="musenboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/nginx-error/" itemprop="url">net::ERR_INCOMPLETE_CHUNKED_ENCODING</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T00:00:00+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>情景：发现其他同事打开我本机页面，某些返回数据量大的接口，在Chrome浏览器中会报net::ERR_INCOMPLETE_CHUNKED_ENCODING的错误。</p>
+<p>开发环境：<br>tomcat7.0.75<br>nginx<br>jdk1.7</p>
+<p>定位问题：当直接请求接口时，有些数据被截掉了。当没通过nginx转发时，接口返回数据正常。由次可知问题发生在nginx。</p>
+<p>查看nginx的错误日志：open() “/usr/local/var/run/nginx/proxy_temp/0/03/0000000030” failed (13: Permission denied) while reading upstream。</p>
+<p>分析：当代理文件大小超过配置的proxy_temp_file_write_size值时，nginx会将文件写入到临时目录下（默认为/proxy_temp）。如果nginx对proxy_temp没有访问的权限，就会报Permission denied的错误。</p>
+<p>解决：<br>打开nginx.conf</p>
+<blockquote>
+<p>添加user www www;</p>
+<p>chown -R www:www /usr/local/var/run/nginx/proxy_temp</p>
+</blockquote>
+<p>给这个用户授权。<br>重启nginx：</p>
+<blockquote>
+<p>nginx -t</p>
+<p>nginx -s reload</p>
+</blockquote>
+<p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://musenboy.com/2018/01/17/sku/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1056,7 +1191,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1069,7 +1204,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
